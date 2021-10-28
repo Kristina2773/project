@@ -1,10 +1,22 @@
 "use strict";
 
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
 
-let number = 5;
-const leftBorderWidth = 1;
-const obj = {
-    a: 50
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+
 };
 
-obj.a = 10;
+const firstQuestion = prompt('Один из последних просмотренных фильмов?',''),
+    firstPercent = prompt('На сколько оцените его?',''),
+    secondQuestion = prompt('Один из последних просмотренных фильмов?',''),
+    secondPercent = prompt('На сколько оцените его?','');
+
+personalMovieDB.movies[firstQuestion] = firstPercent;
+personalMovieDB.movies[secondQuestion] = secondPercent;
+
+console.log(personalMovieDB);
